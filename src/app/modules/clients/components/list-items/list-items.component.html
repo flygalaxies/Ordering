@@ -1,0 +1,17 @@
+<div class="mainContainer">
+  <input [(ngModel)]="query" placeholder="Search">
+  <div class="itemsContainer" *ngFor="let item of items | filter: query" (click)="selectItem(item.id)" id="{{item.id}}">
+    <div class="grid1">
+        <img *ngIf="item.photo" src="{{item.photo}}" alt="img">
+    </div>
+    <div class="grid2">
+      <div class="itemHeader">
+        <span id="name">{{item.name}}</span>
+        <span id="price">R &nbsp; {{item.price}}</span>
+      </div>
+      <div class="itemDescription">
+        {{item.description}}
+      </div>
+    </div>
+  </div>
+</div>

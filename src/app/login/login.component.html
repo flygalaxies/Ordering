@@ -1,0 +1,13 @@
+<div class="mainContainer">
+  <form class="loginForm" [formGroup]="loginForm" (ngSubmit)="submit()">
+    <h2>LOGIN</h2>
+    <div class="inputs">
+      <input type="text" placeholder="Username" formControlName="username">
+      <input type="password" placeholder="Password" formControlName="password">
+    </div>
+    <div class="buttons">
+      <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>

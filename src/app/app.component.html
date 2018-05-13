@@ -1,0 +1,30 @@
+<nav class="navigation" *ngIf="_loginService.isLoggedIn">
+  <a *ngIf="_loginService.isAdmin" [routerLink]="['/items']">Items</a>
+  <a *ngIf="!_loginService.isAdmin" [routerLink]="['/clients']">Clients</a>
+  <a *ngIf="_loginService.isAdmin" [routerLink]="['/orders']">Orders</a>
+  <a></a>
+  <a></a>
+  <a></a>
+  <div class="details">
+    <div id="navIcon" [ngClass]="{'open': toggle === true}" (click)="topMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div *ngIf="toggle" class="menuBar">
+      <div class="buttonContainer">
+        <button (click)="logout()">LOGOUT</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<nav class="navigation" *ngIf="!_loginService.isLoggedIn">
+  <a (click)="login()">Login</a>
+  <div *ngIf="_loginService.loginModal">
+    <app-login></app-login>
+  </div>
+</nav>
+<div class="routerContainer">
+  <router-outlet></router-outlet>
+</div>

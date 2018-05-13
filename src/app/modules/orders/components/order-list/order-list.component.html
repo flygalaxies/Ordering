@@ -1,0 +1,16 @@
+<div class="mainContainer">
+  <div class="itemsContainer" *ngFor="let item of items" (click)="selectItem(item.id)">
+    <div class="grid1">
+        <img *ngIf="item.photo" src="{{item.photo}}" alt="img">
+    </div>
+    <div class="grid2">
+      <div class="itemHeader">
+        <span id="name">{{item.name}}</span>
+        <span id="price">R &nbsp; {{item.price}}</span>
+      </div>
+      <div class="itemDescription">
+        {{item.description}}
+      </div>
+    </div>
+  </div>
+</div>
