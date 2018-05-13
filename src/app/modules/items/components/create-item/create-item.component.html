@@ -2,7 +2,7 @@
   <form [formGroup]="itemForm" class="itemForm">
     <input placeholder="Item Name" formControlName="itemName">
     <input placeholder="Price" type="number" formControlName="itemPrice">
-    <input type="file" (change)="imageUplaoder($event, media)" formControlName="itemPhoto">
+    <input type="file" (change)="imageUplaoder($event)" formControlName="itemPhoto">
     <textarea class="description" placeholder="Description" formControlName="itemDescription"></textarea>
     <button type="submit" [disabled]="!itemForm.valid" (click)="submitItem()">Submit</button>
   </form>

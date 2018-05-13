@@ -11,6 +11,7 @@ export class ListItemsComponent implements OnInit {
 
   items: IItem[];
   itemsInCart: IItem[];
+  query: any;
 
   constructor(private _dataService: AppDataService) {
     this.itemsInCart = new Array();

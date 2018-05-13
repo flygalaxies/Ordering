@@ -13,7 +13,7 @@ export class AppComponent {
   public loginModal: boolean;
   isAdmin;
 
-  constructor(private _loginService: LoginService) {
+  constructor(public _loginService: LoginService) {
     this.toggle = false;
     let user = JSON.parse(localStorage.getItem("currentUser"));
     if (user) {
