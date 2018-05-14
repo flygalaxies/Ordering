@@ -5,7 +5,17 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="styles.1dc6abe5f8aa59bc2887.css"></head>
+<script>  
+  (function () {
+    var redirect = sessionStorage.redirect;
+    delete sessionStorage.redirect;
+    if (redirect && redirect != location.href) {
+      history.replaceState(null, null, redirect);
+    }
+  })();
+</script><link rel="stylesheet" href="styles.1dc6abe5f8aa59bc2887.css"></head>
+
+
 <body>
   <app-root></app-root>
 
